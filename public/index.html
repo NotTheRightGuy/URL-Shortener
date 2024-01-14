@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Link Shortener</title>
+    </head>
+    <body>
+        <h1>Link Shortener</h1>
+        <div class="container">
+            <div id="box">
+                <form action="">
+                    <label for="longUrl">Shorten a long URL</label>
+                    <input
+                        type="text"
+                        name="longUrl"
+                        id="longurl"
+                        placeholder="Enter Long Link Here"
+                    />
+                    <br />
+                    <label for="shortCode">Customise your link</label>
+                    <p>Leave empty to generate unique code</p>
+                    <input
+                        type="text"
+                        name="shortCode"
+                        id="shortCode"
+                        placeholder="Enter alias"
+                    />
+                    <br />
+                    <button type="submit" id="submit">Shorten</button>
+                </form>
+                <div id="result">
+                    <button id="copy">Copy</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
