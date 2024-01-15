@@ -1,5 +1,5 @@
 # terminals
-terminals: ["yarn"]
+terminals: ["yarn && clear"]
 # other config
 tabs: ["index.js"]
 run-button: clear && nodemon index.js
