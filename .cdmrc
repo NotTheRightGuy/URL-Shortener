@@ -1,5 +1,5 @@
 # terminals
 terminals: ["clear"]
 # other config
-tabs: ["/models/Link.js"]
+tabs: ["index.js"]
 run-button: clear && nodemon index.js
