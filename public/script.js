@@ -1,10 +1,9 @@
-//! All necessary DOM elements
 const btn = document.getElementById("submit");
 const longLink = document.getElementById("longurl");
 const shortCode = document.getElementById("shortCode");
 const shortUrl = document.getElementById("shortUrl");
+const copyBtn = document.getElementById("copy");
 const mainURL = window.location.href;
-
 btn.addEventListener("click", (e) => {
     e.preventDefault();
     const url = longLink.value;
