@@ -1,25 +1,37 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
-// Define PORT variable here
 const PORT = 1337;
+const mongoose = require("mongoose"); // Importing mongoose
+
+// Add your URI below to connect to your MongoDB database
+const uri = "YOUR_URI_HERE";
 
 function callback() {
-    // Log a message to the console indicating the server has started
     console.log(`Listening on PORT ${PORT}`);
 }
 
-// Define a route for GET requests to "/"
+function callbackToRunWhenConnected() {
+    // This function will run when the connection is successful
+    // Console log a message saying that the connection is successful
+}
+
 app.get("/", (req, res) => {
     res.json({ msg: "Hello World" });
 });
-// Define a dynamic route for GET requests to "/:code"
+
 app.get("/:code", (req, res) => {
     res.json({ code: req.params.code });
 });
-// Define a route for POST requests to "/shorten"
+
 app.post("/shorten", (req, res) => {
     res.json({ msg: "POST successful" });
 });
+
+// This line connects to MongoDB
+mongoose
+    .connect(uri)
+    .then(callbackToRunWhenConnected)
+    .catch((err) => console.log(err));
 
 app.listen(PORT, callback);
