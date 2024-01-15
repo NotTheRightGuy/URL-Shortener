@@ -1,5 +1,5 @@
 # terminals
 terminals: ["clear"]
 # other config
-tabs: ["index.js"]
+tabs: ["/utils/Shortener.js"]
 run-button: clear && nodemon index.js
