@@ -2,20 +2,18 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-require("dotenv").config();
 const Link = require("./models/Link");
 const generateShortURL = require("./utils/Shortener");
-const logger = require("./middleware/logger");
+
+require("dotenv").config(); // For .env file
 
 //* Middleware
 app.use(express.json());
 app.use(express.static("public"));
-app.use(logger);
 
 //* Variables
-const port = 1337;
-const db_password = process.env.MONGODB_PASSWORD;
-const uri = `mongodb+srv://NotTheRightGuy:${db_password}@cluster0.gf1otxj.mongodb.net/shortener?retryWrites=true&w=majority`;
+const PORT = process.env.PORT || 1337;
+const URI = process.env.MONGODB_URI;
 
 //* Route Definitions
 app.get("/", (req, res) => {
@@ -108,7 +106,7 @@ app.post("/shorten", (req, res) => {
 
 //* Connection Part
 mongoose
-    .connect(uri)
+    .connect(URI)
     .then(() => {
         console.log("Connected to MongoDB Instance");
     })
@@ -116,6 +114,6 @@ mongoose
         console.log(err);
     });
 
-app.listen(port, () => {
-    console.log(`URL Shortener listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`URL Shortener listening at http://localhost:${PORT}`);
 });
