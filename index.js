@@ -2,24 +2,21 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-require("dotenv").config();
+
 const Link = require("./models/Link");
 const generateShortURL = require("./utils/Shortener");
-const logger = require("./middleware/logger");
 
 //* Middleware
 app.use(express.json());
-app.use(express.static("public"));
-app.use(logger);
+app.use(express.static("public")); // Allows us to serve static files from the public folder
 
 //* Variables
-const port = 1337;
-const db_password = process.env.MONGODB_PASSWORD;
-const uri = `mongodb+srv://NotTheRightGuy:${db_password}@cluster0.gf1otxj.mongodb.net/shortener?retryWrites=true&w=majority`;
+const PORT = 1337;
+const uri = `YOUR_MONGODB_URI`;
 
 //* Route Definitions
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/public/index.html"); // Sends the index.html file to the client
 });
 
 app.get("/:url", (req, res) => {
@@ -116,6 +113,6 @@ mongoose
         console.log(err);
     });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(`URL Shortener listening at http://localhost:${port}`);
 });

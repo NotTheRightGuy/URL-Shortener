@@ -1,5 +1,5 @@
 # terminals
-terminals: ["echo let's start"]
+terminals: ["yarn && clear"]
 # other config
-tabs: ["index.js"]
+tabs: ["public/index.html","index.js"]
 run-button: clear && nodemon index.js
