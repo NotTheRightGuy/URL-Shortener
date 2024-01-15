@@ -1,5 +1,5 @@
 # terminals
-terminals: ["clear"]
+terminals: ["yarn"]
 # other config
 tabs: ["/utils/Shortener.js"]
 run-button: clear && nodemon index.js
