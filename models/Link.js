@@ -6,7 +6,10 @@ const Link = new Schema({
         type: String,
         required: true,
     },
-    // Define shortCode field here
+    shortCode: {
+        type: String,
+        required: true,
+    },
 });
 
 module.exports = mongoose.model("Link", Link);
