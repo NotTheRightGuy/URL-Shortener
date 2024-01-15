@@ -114,5 +114,5 @@ mongoose
     });
 
 app.listen(PORT, () => {
-    console.log(`URL Shortener listening at http://localhost:${port}`);
+    console.log(`URL Shortener listening at http://localhost:${PORT}`);
 });
