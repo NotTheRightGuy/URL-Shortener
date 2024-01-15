@@ -1,5 +1,5 @@
 # terminals
-terminals: ["echo Protect your code"]
+terminals: ["yarn && clear && echo Protect your code"]
 # other config
 tabs: ["index.js"]
 run-button: clear && nodemon index.js
