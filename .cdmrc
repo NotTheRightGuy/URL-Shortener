@@ -1,5 +1,5 @@
 # terminals
-terminals: ["echo let's start"]
+terminals: ["clear"]
 # other config
-tabs: ["index.js"]
+tabs: ["/models/Link.js"]
 run-button: clear && nodemon index.js
