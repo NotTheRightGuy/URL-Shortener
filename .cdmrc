@@ -1,1 +1,5 @@
-terminals: ["npm install"]
+# terminals
+terminals: ["yarn", 'echo "We''re ready"']
+# other config
+tabs: ["index.js"]
+run-button: clear && nodemon index.js
